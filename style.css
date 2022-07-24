@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,300&display=swap');
+
+@font-face {
+   font-family: 'Modelica';
+   src: url(fonts/BwModelicaSS01-Regular.woff) format('woff');
+   font-weight: normal;
+}
+
+@font-face {
+   font-family: 'Modelica';
+   src: url(fonts/BwModelicaSS01-Bold.woff) format('woff');
+   font-weight: 700;
+}
+
+:root {
+   --bg-color: #edddd4;
+   --yellow: #fcca46;
+   --green: #a1c181;
+   --red: #c8553d;
+
+   --font-serif: 'Crimson Pro', serif;
+   --font-sans-serif: 'Modelica', sans-serif;
+}
