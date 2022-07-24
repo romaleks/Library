@@ -14,10 +14,107 @@
 
 :root {
    --bg-color: #edddd4;
-   --yellow: #fcca46;
+   --yellow: #ffeb99;
    --green: #a1c181;
    --red: #c8553d;
+   --white: #fff;
 
    --font-serif: 'Crimson Pro', serif;
    --font-sans-serif: 'Modelica', sans-serif;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+}
+
+body { 
+   background-color: #edddd4;
+   font-family: var(--font-sans-serif);
+}
+
+.header {
+   background-color: #c8553d;
+   padding: 1rem 3rem;
+   color: var(--white);
+}
+.header img {
+   width: 65px;
+   margin: 0 0.5rem 0 0;
+}
+.header__logo {
+   display: inline-flex;
+   align-items: center;
+   font-size: 4rem;
+   cursor: pointer;
+}
+main {
+   padding: 2rem;
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+   gap: 2rem;
+}
+.book {
+   padding: 1.7em 1em 1em;
+   font-size: 1.6rem;
+   background-color: var(--yellow);
+   text-align: center;
+   border-radius: 10px;
+   position: relative;
+}
+.book:last-child {
+   background-color: var(--green);
+}
+.book__name {
+   font-family: var(--font-serif);
+   margin: 0 0 2rem 0;
+}
+.book__title {
+   font-weight: 700;
+   font-size: 2.2rem;
+   margin: 0 0 0.3rem 0;
+}
+.book__author {
+   font-style: italic;
+}
+.book__pages {
+   margin: 0 0 2rem 0;
+}
+.book__status {
+   width: 220px;
+   padding: 0.3rem 1rem;
+   border: 3px solid;
+   border-radius: 10px;
+   font-size: 1.4rem;
+   background-color: inherit;
+   cursor: pointer;
+}
+.book__remove {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   width: 30px;
+   height: 30px;
+   background-color: var(--red);
+   border-radius: 5px;
+   cursor: pointer;
+}
+.book__remove:before,
+.book__remove:after {
+   content: '';
+   position: absolute;
+   width: 20px;
+   height: 5px;
+   border-radius: 3px;
+   background-color: var(--white);
+}
+
+.book__remove:before {
+   transform: rotate(-45deg);
+}
+.book__remove:after {
+   transform: rotate(45deg);
 }
