@@ -3,5 +3,5 @@ const removeBtn = document.querySelector('.book__remove');
 
 removeBtn.addEventListener('click', () => {
    book.style.transform = 'scale(0)';
-   setTimeout(() => book.style.display = 'none', 300)
+   setTimeout(() => book.style.display = 'none', 300);
 })
