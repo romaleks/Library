@@ -184,6 +184,10 @@ main {
    display: flex;
    justify-content: center;
    align-items: center;
+   visibility: hidden;
+}
+.popup.active {
+   visibility: visible;
 }
 .popup__content {
    display: flex;
@@ -193,6 +197,11 @@ main {
    background-color: var(--bg-color);
    border-radius: 10px;
    position: relative;
+   transition: all 0.3s ease;
+   transform: scale(0);
+}
+.popup.active .popup__content {
+   transform: scale(1);
 }
 .popup .remove-btn {
    position: absolute;
