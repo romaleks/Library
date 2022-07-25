@@ -23,8 +23,8 @@
             <div class="book__author">J. K. Rowling</div>
          </div>
          <div class="book__pages">600 Pages</div>
-         <button type="button" class="book__status">Currently Reading</button>
-         <div class="book__remove"></div>
+         <button type="button" class="status-btn">Currently Reading</button>
+         <div class="remove-btn"></div>
       </div>
       <div class="book">
          <div class="book__name">
@@ -32,14 +32,33 @@
             <div class="book__author">J. K. Rowling</div>
          </div>
          <div class="book__pages">600 Pages</div>
-         <button type="button" class="book__status">Read</button>
-         <div class="book__remove"></div>
+         <button type="button" class="status-btn">Read</button>
+         <div class="remove-btn"></div>
       </div>
       <div class="add">
          <div class="add__title">Add Book</div>
          <div class="add__btn"></div>
       </div>
    </main>
+   <div class="popup">
+      <div class="popup__content">
+         <div class="popup__title">Add Book</div>
+         <div class="remove-btn"></div>
+         <div class="popup__input">
+            <input type="text" name="book_name" id="name" placeholder=" ">
+            <label for="name">Book Title</label>
+         </div>
+         <div class="popup__input">
+            <input type="text" name="book_author" id="author" placeholder=" ">
+            <label for="author">Book Author</label>
+         </div>
+         <div class="popup__input">
+            <input type="number" name="book_pages" id="pages" placeholder=" ">
+            <label for="pages">Number of Pages</label>
+         </div>
+         <button data-status="not-read" class="status-btn" type="button">Not Read</button>
+      </div>
+   </div>
 </body>
 
 <script src="script.js"></script>
