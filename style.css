@@ -234,3 +234,9 @@ main {
 .popup .status-btn[data-status="not-read"] {
    background-color: var(--lite-red);
 }
+.popup .status-btn[data-status="reading"] {
+   background-color: var(--yellow);
+}
+.popup .status-btn[data-status="read"] {
+   background-color: var(--green);
+}
