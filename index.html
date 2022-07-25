@@ -40,7 +40,7 @@
          <div onclick="togglePopup()" class="add__btn"></div>
       </div>
    </main>
-   <div class="popup">
+   <div class="popup active">
       <div class="popup__content">
          <div class="popup__title">Add Book</div>
          <div class="remove-btn"></div>
@@ -56,7 +56,10 @@
             <input type="number" name="book_pages" id="pages" placeholder=" ">
             <label for="pages">Number of Pages</label>
          </div>
-         <button data-status="not-read" class="status-btn" type="button">Not Read</button>
+         <div class="popup__btns">
+            <button data-status="not-read" class="status-btn" type="button">Not Read</button>
+            <button type="button" class="popup-submit">OK</button>
+         </div>
       </div>
    </div>
 </body>
