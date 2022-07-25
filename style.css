@@ -68,8 +68,15 @@ main {
    border-radius: 10px;
    position: relative;
    transition: all 0.2s ease;
+   transition: background 0.7s ease;
 }
-.book:nth-child(2) {
+.book[data-status="not-read"] {
+   background-color: var(--lite-red);
+}
+.book[data-status="reading"] {
+   background-color: var(--yellow);
+}
+.book[data-status="read"] {
    background-color: var(--green);
 }
 .book__name {

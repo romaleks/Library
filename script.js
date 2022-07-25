@@ -1,16 +1,14 @@
 const book = document.querySelectorAll('.book');
 const removeBtn = document.querySelectorAll('.remove-btn');
 const popup = document.querySelector('.popup');
-const popupContent = document.querySelector('.popup__content');
-const popupCloseBtn = popup.querySelector('.remove-btn')
-const popupStatusBtn = popup.querySelector('.status-btn');
+const popupCloseBtn = popup.querySelector('.remove-btn');
+const statusBtns = document.querySelectorAll('.status-btn');
 
 let btnStatus = {
    'Not Read': 'not-read',
    'Currently Reading': 'reading',
    'Read': 'read'
 };
-let step = 1;
 
 removeBtn.forEach(button => {
    button.addEventListener('click', () => {
@@ -25,8 +23,16 @@ function togglePopup() {
 
 popupCloseBtn.addEventListener('click', () => togglePopup());
 
-popupStatusBtn.addEventListener('click', () => {
-   popupStatusBtn.setAttribute('data-status', btnStatus[Object.keys(btnStatus)[step]])
-   popupStatusBtn.textContent = Object.keys(btnStatus)[step++];
-   if (step === 3) step = 0;
+statusBtns.forEach(btn => {
+   btn.addEventListener('click', () => {
+      const parentOfBtn = btn.parentNode;
+      let i = Number(btn.getAttribute('data-index'));
+      if (i === 2) i = -1;
+      btn.textContent = Object.keys(btnStatus)[++i];
+      btn.setAttribute('data-status', btnStatus[Object.keys(btnStatus)[i]]);
+      if (parentOfBtn.classList.contains('book')) {
+         parentOfBtn.setAttribute('data-status', btnStatus[Object.keys(btnStatus)[i]]);
+      }
+      btn.setAttribute('data-index', i);
+   });
 });

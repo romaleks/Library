@@ -17,22 +17,22 @@
       </div>
    </header>
    <main>
-      <div class="book">
+      <div data-status="reading" class="book">
          <div class="book__name">
             <div class="book__title">"Harry Potter"</div>
             <div class="book__author">J. K. Rowling</div>
          </div>
          <div class="book__pages">600 Pages</div>
-         <button type="button" class="status-btn">Currently Reading</button>
+         <button type="button" data-status="reading" data-index="1" class="status-btn">Currently Reading</button>
          <div class="remove-btn"></div>
       </div>
-      <div class="book">
+      <div data-status="read" class="book">
          <div class="book__name">
             <div class="book__title">"Harry Potter"</div>
             <div class="book__author">J. K. Rowling</div>
          </div>
          <div class="book__pages">600 Pages</div>
-         <button type="button" class="status-btn">Read</button>
+         <button type="button" data-status="read" data-index="2" class="status-btn">Read</button>
          <div class="remove-btn"></div>
       </div>
       <div class="add">
@@ -40,7 +40,7 @@
          <div onclick="togglePopup()" class="add__btn"></div>
       </div>
    </main>
-   <div class="popup active">
+   <div class="popup">
       <div class="popup__content">
          <div class="popup__title">Add Book</div>
          <div class="remove-btn"></div>
@@ -57,7 +57,7 @@
             <label for="pages">Number of Pages</label>
          </div>
          <div class="popup__btns">
-            <button data-status="not-read" class="status-btn" type="button">Not Read</button>
+            <button type="button" data-status="not-read" data-index="0" class="status-btn">Not Read</button>
             <button type="button" class="popup-submit">OK</button>
          </div>
       </div>
