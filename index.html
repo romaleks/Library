@@ -40,26 +40,28 @@
          <div onclick="togglePopup()" class="add__btn"></div>
       </div>
    </main>
-   <div class="popup">
+   <div class="popup active">
       <div class="popup__content">
          <div class="popup__title">Add Book</div>
-         <div class="remove-btn"></div>
-         <div class="popup__input">
-            <input type="text" name="book_name" id="name" placeholder=" ">
-            <label for="name">Book Title</label>
-         </div>
-         <div class="popup__input">
-            <input type="text" name="book_author" id="author" placeholder=" ">
-            <label for="author">Book Author</label>
-         </div>
-         <div class="popup__input">
-            <input type="number" name="book_pages" id="pages" placeholder=" ">
-            <label for="pages">Number of Pages</label>
-         </div>
-         <div class="popup__btns">
-            <button type="button" data-status="not-read" data-index="0" class="status-btn">Not Read</button>
-            <button type="button" class="popup-submit">OK</button>
-         </div>
+         <div onclick="togglePopup()" class="remove-btn"></div>
+         <form>
+            <div class="popup__input">
+               <input type="text" name="book_name" id="name" placeholder=" " required>
+               <label for="name">Book Title</label>
+            </div>
+            <div class="popup__input">
+               <input type="text" name="book_author" id="author" placeholder=" " required>
+               <label for="author">Book Author</label>
+            </div>
+            <div class="popup__input">
+               <input type="number" name="book_pages" id="pages" placeholder=" " min="1" max="2000" required>
+               <label for="pages">Number of Pages</label>
+            </div>
+            <div class="popup__btns">
+               <button type="button" data-status="not-read" data-index="0" class="status-btn">Not Read</button>
+               <button type="submit" class="popup-submit">OK</button>
+            </div>
+         </form>
       </div>
    </div>
 </body>

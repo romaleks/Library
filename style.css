@@ -197,15 +197,17 @@ main {
    visibility: visible;
 }
 .popup__content {
-   display: flex;
-   flex-direction: column;
-   gap: 1rem;
    padding: 2rem;
    background-color: var(--bg-color);
    border-radius: 10px;
    position: relative;
    transition: all 0.3s ease;
    transform: scale(0);
+}
+.popup__content form {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
 }
 .popup.active .popup__content {
    transform: scale(1);
@@ -215,11 +217,13 @@ main {
 }
 .popup__title {
    font-size: 2rem;
+   margin: 0 0 1rem 0;
 }
 .popup__input {
    position: relative;
 }
 .popup input {
+   width: 100%;
    font-family: inherit;
    border: none;
    border-bottom: 5px solid #000;
