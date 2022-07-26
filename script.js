@@ -44,6 +44,12 @@ form.addEventListener('submit', (e) => {
    const newBook = new Book(bookTitle, bookAuthor, bookPages, bookStatus);
    addBookToLibrary(newBook);
    displayBook(createBook(newBook));
+   titleInput.value = '';
+   authorInput.value = '';
+   pagesInput.value = '';
+   statusInput.setAttribute('data-status', 'not-read');
+   statusInput.setAttribute('data-index', '0');
+   statusInput.textContent = 'Not Read';
 });
 
 function addBookToLibrary(book) {
