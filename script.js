@@ -87,7 +87,6 @@ function changeBookStatus(btn, book) {
 function displayBook(book) {
    main.insertBefore(book, addBtn);
    books = document.querySelectorAll('.book');
-   statusBtn = book.querySelector('.status-btn');
    loopBooks();
 }
 
@@ -100,7 +99,9 @@ function loopBooks() {
       statusBtn = book.querySelector('.status-btn');
       item.changeStatus(statusBtn, item);
    }
+   books = document.querySelectorAll('.book');
    removeBtns = main.querySelectorAll('.remove-btn');
+   removeBtns.forEach(btn => btn.addEventListener('click', () => removeBook(btn.parentNode)));
 }
 
 function removeBook(book) {
