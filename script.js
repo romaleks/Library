@@ -11,7 +11,6 @@ const authorInput = document.getElementById('author');
 const pagesInput = document.getElementById('pages');
 const statusInput = popup.querySelector('.status-btn');
 const submitBtn = popup.querySelector('.popup-submit');
-const statusBtns = document.querySelectorAll('[id="example"], [id="input"]')
 
 let btnStatus = {
    'Not Read': 'not-read',
@@ -34,6 +33,8 @@ const exampleBook = new Book('Harry Potter', 'J. K. Rowling', '600', 'reading');
 addBookToLibrary(exampleBook);
 displayBook(createBook(exampleBook));
 
+changeBookStatus(statusInput);
+
 form.addEventListener('submit', (e) => {
    e.preventDefault();
    const bookTitle = titleInput.value;
@@ -44,8 +45,6 @@ form.addEventListener('submit', (e) => {
    addBookToLibrary(newBook);
    displayBook(createBook(newBook));
 });
-
-removeBtns.forEach(btn => btn.addEventListener('click', () => removeBook(btn.parentNode)));
 
 function addBookToLibrary(book) {
    myLibrary.push(book);
@@ -78,9 +77,9 @@ function changeBookStatus(btn, book) {
       btn.setAttribute('data-status', stat);
       if (parentOfBtn.classList.contains('book')) {
          parentOfBtn.setAttribute('data-status', stat);
+         book.status = stat;
       }
       btn.setAttribute('data-index', i);
-      book.status = stat
    });
 }
 
