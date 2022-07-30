@@ -20,14 +20,16 @@ let btnStatus = {
 
 myLibrary = [];
 
-function Book(title, author, pages, status) {
-   this.title = title;
-   this.author = author;
-   this.numOfPages = pages;
-   this.status = status;
-}
+class Book {
+   constructor(title, author, pages, status) {
+      this.title = title;
+      this.author = author;
+      this.numOfPages = pages;
+      this.status = status;
+   }
 
-Book.prototype.changeStatus = changeBookStatus;
+   changeStatus = changeBookStatus;
+}
 
 const exampleBook = new Book('Harry Potter', 'J. K. Rowling', '600', 'reading');
 addBookToLibrary(exampleBook);
